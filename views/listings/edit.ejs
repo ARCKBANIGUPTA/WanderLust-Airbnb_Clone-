@@ -1,0 +1,85 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="row mt-3">
+    <div class="col-8 offset-2">
+      <h1>Edit your listing</h1>
+      <form
+        action="/listings/<%= crr_list._id %>?_method=PUT"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div>
+          <label for="titl" class="form-label"> Title </label>
+          <input
+            type="text"
+            id="titl"
+            name="Listing[title]"
+            value="<%= crr_list.title %>"
+            class="form-control"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="desc" class="form-label">Description</label>
+          <textarea
+            name="Listing[desc]"
+            id="desc"
+            cols="15"
+            rows="5"
+            class="form-control"
+          >
+<%= crr_list.desc %></textarea
+          >
+        </div>
+        <br />
+        <div>
+          <label for="pric" class="form-label">Price</label>
+          <input
+            type="number"
+            name="Listing[price]"
+            id="pric"
+            value="<%= crr_list.price %>"
+            class="form-control"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="locatio" class="form-label">Location</label>
+          <input
+            type="text"
+            name="Listing[location]"
+            id="locatio"
+            value="<%= crr_list.location %>"
+            class="form-control"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="countr" class="form-label">Country</label>
+          <input
+            type="text"
+            name="Listing[country]"
+            id="countr"
+            value="<%= crr_list.country %>"
+            class="form-control"
+          />
+        </div>
+        <br />
+        <div><img src="<%= crr_list.image.url %>"</div>
+        <div>
+          <label for="imag" class="form-label">Image link</label>
+          <input
+            type="file"
+            name="Listing[image]"
+            id="imag"
+            class="form-control"
+          />
+        </div>
+        <br />
+
+        <button class="btn btn-outline-danger">Confirm</button>
+      </form>
+      <br />
+    </div>
+  </div>
+</body>

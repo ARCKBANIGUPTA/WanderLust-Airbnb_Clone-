@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create new list:Airbnb</title>
+  </head>
+  <body>
+    <% layout("/layouts/boilerplate") %>
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>Add your property details</h1>
+        <form
+          action="/listings"
+          method="post"
+          novalidate
+          class="needs-validation"
+          enctype="multipart/form-data"
+        >
+          <!-- enctype enables the ejs template to accept different files like pdf etc -->
+          <div>
+            <label for="titl" class="form-label">Title</label>
+            <input
+              type="text"
+              id="titl"
+              name="Listing[title]"
+              placeholder="Title"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Title looks nice !!!</div>
+            <div class="invalid-feedback">Please enter the title</div>
+          </div>
+          <br />
+          <div>
+            <label for="descr" class="form-label">Description</label>
+            <textarea
+              name="Listing[desc]"
+              id="descr"
+              placeholder="Description of your property"
+              cols="15"
+              rows="5"
+              class="form-control"
+              required
+            ></textarea>
+            <div class="valid-feedback">Very detailed description</div>
+            <div class="invalid-feedback">
+              Please enter the description of your listing
+            </div>
+          </div>
+
+          <br />
+          <div>
+            <label for="pric" class="form-label">Price</label>
+            <input
+              type="number"
+              name="Listing[price]"
+              id="pric"
+              placeholder="Cost of living"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Perfect</div>
+            <div class="invalid-feedback">Please enter a valid Price</div>
+          </div>
+          <br />
+          <div>
+            <label for="locatio" class="form-label">Location</label>
+            <input
+              type="text"
+              name="Listing[location]"
+              id="locatio"
+              placeholder="Write the address of your property with pincode"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">This place is attractive</div>
+            <div class="invalid-feedback">Please enter the location</div>
+          </div>
+          <br />
+          <div>
+            <label for="countr" class="form-label">Country</label>
+            <input
+              type="text"
+              name="Listing[country]"
+              id="countr"
+              placeholder="Write the country name"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">All right</div>
+            <div class="invalid-feedback">Please enter the country name</div>
+          </div>
+          <br />
+
+          <div>
+            <label for="imag" class="form-label"> Upload Image </label>
+            <input
+              type="file"
+              name="Listing[image]"
+              id="imag"
+              class="form-control"
+            />
+          </div>
+          <br />
+
+          <button type="submit" class="btn btn-outline-danger">ADD</button>
+        </form>
+      </div>
+    </div>
+    <br />
+  </body>
+</html>
+
+<!-- <div>
+            <label for="imag" class="form-label"> Image link </label>
+            <input
+              type="text"
+              name="Listing[image]"
+              id="imag"
+              placeholder="enter the image link/URL"
+              class="form-control"
+            />
+          </div> -->

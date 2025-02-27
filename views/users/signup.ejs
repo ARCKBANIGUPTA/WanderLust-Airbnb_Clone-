@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+  </head>
+  <body>
+    <% layout("/layouts/boilerplate")%>
+    <div class="row mt-3">
+      <h1 class="col-6 offset-3">SignUp</h1>
+      <div class="col-6 offset-3">
+        <form
+          action="/signup"
+          method="post"
+          class="needs-validation"
+          novalidate>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+              class="form-control"
+              required />
+            <div class="valid-feedback">Go ahead</div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail ID</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="E-mail ID"
+              class="form-control"
+              required />
+            <div class="valid-feedback">Go ahead</div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              class="form-control"
+              required />
+            <div class="valid-feedback">Go ahead</div>
+          </div>
+          <button class="btn btn-success">SignUp</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
